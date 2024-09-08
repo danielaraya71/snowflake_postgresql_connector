@@ -1,0 +1,18 @@
+---
+version: '3'
+
+services:
+  agent-app-instance:
+    image: snowflakedb/database-connector-agent:latest
+    container_name: agent-app-instance
+    restart: unless-stopped
+    ports: 
+      - 8080:8080
+    volumes:
+      - ./agent-keys:/home/agent/.ssh
+      - ./configuration/snowflake.json:/home/agent/snowflake.json
+      - ./configuration/datasources.json:/home/agent/datasources.json
+    deploy:
+      resources:
+        limits:
+          memory: 6g

@@ -1,0 +1,9 @@
+{
+  "PSQLDVDRENTAL": {
+      "url": "jdbc:postgresql://host.docker.internal:5432/dvdrental",
+      "username": "postgres",
+      "password": "<password>",
+      "publication": "test_publication",
+      "ssl": false
+  }
+}
